@@ -72,14 +72,15 @@ img {
   padding-bottom: 24px;
 
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+  background-color: #fff;
 }
 
 .page-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background-color: #fff;
 }
 
 .nav-page .logo {
@@ -131,10 +132,10 @@ img {
 }
 
 .box .active::after {
-  content: " ";
+  content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -1px;
   border-radius: 2px;
   width: 100%;
   height: 4px;
@@ -191,6 +192,7 @@ img {
 /* Section Hero */
 .section-hero {
   padding: 188px 0;
+  max-width: 1440px;
 
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #2e2f42;
@@ -200,13 +202,15 @@ img {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .section-hero .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
 }
 
 .section-hero-title {
@@ -268,20 +272,15 @@ img {
   padding: 120px 0;
 }
 
-.icon-list {
+.container-icon {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  padding: 0;
-  margin: 0 0 8px 0;
-}
-
-.icon-item {
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  width: 264px;
+  align-items: center;
+  justify-content: center;
   height: 112px;
-  background: #f4f4fd;
+  background-color: #f4f4fd;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  margin-bottom: 8px;
   position: relative;
 }
 
@@ -392,6 +391,8 @@ img {
 
 .card-icon-item .link {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
   background-color: #4d5ae5;
@@ -404,10 +405,11 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  fill: #f4f4fd;
 }
 
-.card-icon-item:hover .link,
-.card-icon-item:focus .link {
+.card-icon-item .link:hover,
+.card-icon-item .link:focus {
   background-color: #31d0aa;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
@@ -427,16 +429,19 @@ img {
 
 .portfolio-item {
   flex-basis: calc((100% - 48px) / 3);
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: #fff;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-  background: #fff;
+}
+
+.portfolio-img {
+  position: relative;
+  overflow: hidden;
 }
 
 .overlay {
@@ -446,7 +451,7 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
 
-  padding: 40px 32px 164px 32px;
+  padding: 40px 32px;
 
   position: absolute;
   top: 0;
@@ -454,13 +459,13 @@ img {
   width: 100%;
   height: 100%;
 
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-item:hover .overlay {
-  transform: translateY(0);
+.portfolio-img:hover .overlay {
+  transform: translateY(0%);
 }
 
 .portfolio-card-content {
@@ -500,7 +505,11 @@ img {
 
 .footer-wrapper {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
+}
+
+.footer-container {
+  margin-right: 120px;
 }
 
 .footer-box .logo {
@@ -520,12 +529,12 @@ img {
   max-width: 264px;
 }
 
-.social-container {
+.social-links-container {
   width: 208px;
   height: 80px;
 }
 
-.social-container-title {
+.social-title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -550,6 +559,8 @@ img {
 
 .social-links-item .link {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
   background-color: #4d5ae5;
@@ -562,9 +573,10 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  fill: #f4f4fd;
 }
 
-.social-links-item:hover .link,
-.social-links-item:focus .link {
+.social-links-item .link:hover,
+.social-links-item .link:focus {
   background-color: #31d0aa;
 }
